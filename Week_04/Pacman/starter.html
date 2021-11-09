@@ -1,0 +1,35 @@
+<script>
+    const pacArray = [
+        ['pacman_01.png', 'pacman_02.png'],
+        ['pacman_03.png', 'pacman_04.png']
+    ];
+
+    var direction = 0;
+    var focus = 0;
+    
+    function Run() {
+        let img = document.getElementById("pacman");
+        let imgWidth = img.width;
+        focus = (focus + 1) % 2;
+        direction = checkPageBounds(direction, imgWidth);
+        img.src = pacArray[direction][focus];
+        if(direction) {
+            pos -= 20;
+            img.style.left = pos + 'px';
+        }
+        else {
+            pos += 20;
+            img.style.left = pos + 'px';
+        }
+        setTimeout(function() {Run();}, 200);
+    }
+    function checkPageBounds(direction, imgWidth) {
+        let img = document.getElementById("pacman");
+        return direction;
+    }
+</script>
+<html>
+<body>
+    <img id="pacman" src="pacman_01.png" width='200' onclick="Run()" style="position:absolute"> </img>
+</body>
+</html>
