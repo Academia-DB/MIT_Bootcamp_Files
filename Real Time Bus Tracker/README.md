@@ -1,22 +1,24 @@
-Title:
+<h1>Title:</h1>
 Real Time Bus Tracker
 
-Description:
+<h1>Description:</h1>
 Edited MIT Staff code for assignment
+1. Adding a dark/light mode for the map
+2. Resetting the path markers
 
-Installation:
+<h1>Installation:</h1>
 Download zip and drop the html file to web browser
 
-Usage:
+<h1>Usage:</h1>
 Coursework
 
-Support:
+<h1>Support:</h1>
 MIT Staff
 
-Roadmap:
-TBD
+<h1>Roadmap:</h1>
+Add smaller markers and change marker color
 
-License:
+<h1>License:</h1>
 MIT License
 
 Copyright (c) 2020 John Williams
