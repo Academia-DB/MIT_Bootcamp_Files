@@ -1,9 +1,26 @@
 body { 
     margin: 0; padding: 0; 
 }
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
-.map-overlay{
+#map { 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    width: 100%; 
+}
+.map-overlay {
     position: absolute;
     left: 0;
+    padding: 10px;
+}
+#iconButton {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    padding: 10px;
+}
+#path {
+    position: fixed;
+    top: 0px;
+    left: 0px;
     padding: 10px;
 }

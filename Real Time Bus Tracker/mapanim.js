@@ -45,6 +45,13 @@ const busStops = [
 ];
 
 var counter = 0;
+
+function reset(){
+    counter = 0;
+    marker.setLngLat([-71.092761, 42.357575]);
+    move();
+}
+
 function move(){
   setTimeout(() => {
     if(counter >= busStops.length) return;
@@ -52,6 +59,18 @@ function move(){
     counter++;
     move();
   }, 1000);
+}
+
+function changeIcon() { 
+    var iconType = document.getElementById('icon');
+    if(iconType.src.match("light.png")){
+        iconType.src = "dark.png";
+        map.setStyle('mapbox://styles/mapbox/dark-v10');
+    }
+    else if(iconType.src.match("dark.png")){
+        iconType.src = "light.png";
+        map.setStyle('mapbox://styles/mapbox/streets-v11');
+    }
 }
 
 run();

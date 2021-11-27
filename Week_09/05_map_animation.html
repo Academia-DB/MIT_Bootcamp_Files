@@ -36,7 +36,7 @@ var map = new mapboxgl.Map({
     zoom: 14
 });
 
-var marker = new mapboxgl.Marker()
+var marker = new mapboxgl.Marker({"color": "#b40219"})
     .setLngLat([-71.092761, 42.357575])
     .addTo(map);
 
@@ -58,7 +58,10 @@ const busStops = [
 var counter = 0;
 function move(){
   setTimeout(() => {
-    if(counter >= busStops.length) return;
+    if(counter >= busStops.length) {
+      counter = 0;
+      return;
+    }
     marker.setLngLat(busStops[counter]);
     counter++;
     move();
