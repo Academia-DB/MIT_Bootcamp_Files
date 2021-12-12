@@ -63,12 +63,12 @@ function move(){
 
 function changeIcon() { 
     var iconType = document.getElementById('icon');
-    if(iconType.src.match("light.png")){
-        iconType.src = "dark.png";
+    if(iconType.src.match("../light.png")){
+        iconType.src = "../dark.png";
         map.setStyle('mapbox://styles/mapbox/dark-v10');
     }
-    else if(iconType.src.match("dark.png")){
-        iconType.src = "light.png";
+    else if(iconType.src.match("../dark.png")){
+        iconType.src = "../light.png";
         map.setStyle('mapbox://styles/mapbox/streets-v11');
     }
 }
