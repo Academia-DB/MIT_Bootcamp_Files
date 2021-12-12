@@ -28,9 +28,12 @@ header {
     grid-row: 1;
     top: 0px;
     width: 100%;
+    height: 100px;
     position: absolute;
     font-size: 1.1em;
     box-shadow: 0px 0 5px 15px black;
+    z-index: 100;
+    padding-bottom: 10px;
 }
 footer {
     grid-row: 3;
@@ -89,12 +92,15 @@ iframe {
     grid-column: 3;
     grid-row: 4;
 }
+.secondHeader {
+    height: 100px;
+    padding-top: 25px;
+}
 .carousel {
     display: grid;
-    position: relative;
     grid-row: 2;
-    height: calc(100vh - 152px);
-    margin-top: 92px;
+    height: calc(100vh - 170px);
+    margin-top: 110px;
 }
 .carousel-inner, .carousel-item, .carousel-item-active {
     height: 100%;
@@ -102,7 +108,7 @@ iframe {
 .carousel-caption {
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     font-size: 1.25em;
-    transform: translateY(-30%);
+    transform: translateY(-20%);
 }
 
 /* .scroll {
