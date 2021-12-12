@@ -7,6 +7,7 @@ html {
 }
 body {
     display: grid;
+    grid-template-rows: 10% 80% 10%;
     color: white;
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     text-align: center;
@@ -15,14 +16,31 @@ body {
     width: 100%;
     height: 100%;
 }
+#page-container {
+    position: relative;
+    min-height: 100%;
+}
+#main {
+    padding-bottom: 60px;
+}
 header {
     background: black;
-    grid-column: 1/5;
     grid-row: 1;
-    padding: 20px;
+    top: 0px;
     width: 100%;
+    position: absolute;
     font-size: 1.1em;
     box-shadow: 0px 0 5px 15px black;
+}
+footer {
+    grid-row: 3;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 60px;
+    margin: 0 auto;
+    background-color: black;
+    box-shadow: 0 0 5px 15px black;
 }
 ul {
     margin: 0px;
@@ -31,38 +49,65 @@ ul {
 }
 li {
     display: inline-block;
-    margin-right: 20px;
     font-weight: bold;
 }
 a:link {
-    color:orange
+    color:orange;
+    text-decoration: underline dashed gray;
 }
 a:visited {
-    color: orange;
+    color: green;
+    text-decoration: underline dashed gray;
 }
-section {
-    grid-column: 2/4;
-    grid-row: 2/4;
-    color: white;
+a:hover {
+    color: red;
+}
+#mainpage {
+    display: grid;
+    grid-row: 2;
+    grid-template-columns: 10% 25% 30% 25% 10%;
+    grid-template-rows: 30% 40% 15% 40%;
+    font-size: 1.25em;
+}
+img {
+    max-width: 100%;
+    height: auto/2;
+}
+iframe {
     width: 100%;
     height: 100%;
-    font-size: 1.25em;
-    transform: translateY(15%);
-}
-footer {
-    grid-column: 1/5;
-    grid-row: 5;
-    position: fixed;
-    background-color: black;
-    bottom: 0%;
-    width: 100%;
-    height: 5%;
-    box-shadow: 0 0 5px 15px black;
 }
 #profileImg {
-    margin: auto;
-    width: 100%;
+    grid-column: 2;
+    grid-row: 2;
+}
+#video {
+    grid-column: 4;
+    grid-row: 2;
 }
 #bio {
-    margin: 0 auto;
+    grid-column: 3;
+    grid-row: 4;
 }
+.carousel {
+    display: grid;
+    position: relative;
+    grid-row: 2;
+    height: calc(100vh - 152px);
+    margin-top: 92px;
+}
+.carousel-inner, .carousel-item, .carousel-item-active {
+    height: 100%;
+}
+.carousel-caption {
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.25em;
+    transform: translateY(-30%);
+}
+
+/* .scroll {
+    grid-row: 2;
+}
+.PacProj, .EyeProj, .BusProj {
+    padding-bottom: 80px;
+} */

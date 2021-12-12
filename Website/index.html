@@ -3,41 +3,34 @@
     <head>
         <title>Portfolio Website Page</title>
         <meta name="portfolio" content="github portfolio website for MIT Bootcamp" />
-        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <script src="mapanimation.js"></script>
-        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-        <header>
-            <h1>Derek Borowinski's Portfolio</h1>
-            <nav>
-                <ul>
-                    <li><a href="PacmanExercise/index.html">Pacman</a></li>
-                    <li><a href="Eye/index.html">Eye</a></li>
-                    <li><a href="Real Time Bus Tracker/index.html">RealTimeBusTracker</a></li>
-                </ul>
-            </nav>
-        </header>
-        <section>
-            <div id="profileImg">
-                <img src="PortfolioImage.jpg"; alt="Derek"; width="300px"; height="300px">
-            </div>
-            <div id="bio">
-                <p id="description">
-                    My name is Derek Borowinski.<br>I am currently taking the MIT Bootcamp course to learn HTML, JavaScript, and CSS.<br>I have prior experience using C++ in Unreal Engine and C# in Unity.<br>My long term goal is to be able to develop my coding skills so I can one day join in game development.
-                </p>
-                <p>
-                    <a href="https://github.com/Academia-DB" target="_blank">Academia-DB</a>
-                </p>
-                <p>
-                    <a href="https://www.linkedin.com/in/derek-borowinski?trk=profile-badge" target="_blank">LinkedIn</a>
-                </p>
-                <p>
-                    Contact: dereksborowinski@gmail.com
-                </p>
-            </div>
-        </section>
-        <footer></footer>
+        <div id="main">
+            <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+            <header>
+                <h1>Derek Borowinski's Portfolio</h1>
+                <nav>
+                    <ul>
+                        <li><a href="projects.html">Projects</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section id="mainpage">
+                <div id="profileImg">
+                    <img src="PortfolioImage.jpg"; alt="Derek"; width="500px"; height="300px">
+                </div>
+                <div id="video">
+                    <iframe width="500" height="300" src="https://www.youtube.com/embed/SWfCl0Xl58k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div id="bio">
+                    <p id="description">
+                        My name is Derek Borowinski. I am currently taking the MIT Bootcamp course to learn HTML, JavaScript, and CSS. I have prior experience using C++ in Unreal Engine and C# in Unity. My long term goal is to be able to develop my coding skills so I can one day join in game development.<br><br>Github: <a href="https://github.com/Academia-DB" target="_blank">Academia-DB</a><br><br><a href="https://www.linkedin.com/in/derek-borowinski?trk=profile-badge" target="_blank">LinkedIn</a><br><br>Contact: dereksborowinski@gmail.com
+                    </p>
+                </div>
+            </section>
+            <footer></footer>
+        </div>
     </body>
 </html>

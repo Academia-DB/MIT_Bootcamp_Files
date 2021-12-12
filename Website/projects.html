@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Portfolio Website Projects</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        
+        <!--Style.css for website and reference sheet from bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+        
+    </head>
+    <body>
+        <div id="main">
+            <header>
+            <h1>Project List</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Bio</a></li>
+                </ul>
+            </nav>
+            </header>
+            <!--Carousel from bootstrap https://getbootstrap.com/docs/5.1/components/carousel-->
+            <div id="carouselsection" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselsection" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#carouselsection" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carouselsection" data-bs-slide-to="2"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="pacman.png" class="d-block w-100 h-100">
+                        <div class="carousel-caption">
+                            <h5>Pacman</h5>
+                            <p>
+                                This is a project where a PacMan is added with the press of a button. Pressing the start button allows the PacMen to move and bounce around on screen, each with their own speeds and sizes. The reset button cleans the screen.
+                            </p>
+                            <p>
+                                Check out the project in your 
+                                <a href="PacmanExercise/index.html" target="_blank">browser</a>
+                            </p>
+                            <p>
+                                Check out the repository on 
+                                <a href="https://github.com/Academia-DB/MIT_Bootcamp_Files/tree/main/Website/PacmanExercise" target="_blank">GitHub</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="eyeimg.png" class="d-block w-100 h-100">
+                        <div class="carousel-caption">
+                            <h5>Eyes</h5>
+                            <p>
+                                In this project a pair of eyes follows the mouse cursor on the screen. If the user clicks and holds down the mouse, the eyes will shut and when the user lets go of the mouse, the eyes will open.
+                            </p>
+                            <p>
+                                Check out the project in your 
+                                <a href="Eye/index.html" target="_blank">browser</a>
+                            </p>
+                            <p>
+                                Check out the repository on 
+                                <a href="https://github.com/Academia-DB/MIT_Bootcamp_Files/tree/main/Website/Eye" target="_blank">GitHub</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Real Time Bus Tracker/light_screenshot.png" class="d-block w-100 h-100">
+                        <div class="carousel-caption">
+                            <h5>Bus</h5>
+                            <p>
+                                This project uses mapbox map data to create a bus path so the user can see the bus stops from MIT to Harvard by pressing the button in the top left. The top right button is a light/dark mode toggle.
+                            </p>
+                            <p>
+                                Check out the project in your 
+                                <a href="Real Time Bus Tracker/index.html" target="_blank">browser</a>
+                            </p>
+                            <p>
+                                Check out the repository on 
+                                <a href="https://github.com/Academia-DB/MIT_Bootcamp_Files/tree/main/Website/Real%20Time%20Bus%20Tracker" target="_blank">GitHub</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselsection" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselsection" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+
+            <footer></footer>
+
+            <!--This is the js and bootstrap separated files for working carousel https://getbootstrap.com/docs/5.1/getting-started/introduction/-->
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        </div>
+    </body>
+</html>
+
+
+        <!--Older section with grid layout for webpage-->
+        <!-- <section class="scroll">
+            <div class="PacProj">
+                <div id="PacImg">
+                    <img src="pacman.png"; alt="Pac"; width="300px"; height="300px">
+                </div>
+                <div id="Pacman">
+                    <p id="description">
+                        This is a project where a PacMan is added with the press of a button. Pressing the start button allows the PacMen to move and bounce around on screen, each with their own speeds and sizes. The reset button cleans the screen.
+                    </p>
+                </div>
+                <div id = "PacGit">
+                    <p>
+                        Check out the project in your 
+                        <a href="PacmanExercise/index.html" target="_blank">browser</a>
+                    </p>
+                    <p>
+                        Check out the repository on 
+                        <a href="https://github.com/Academia-DB/MIT_Bootcamp_Files/tree/main/Website/PacmanExercise" target="_blank">GitHub</a>
+                    </p>
+                </div>
+            </div>
+            <div class="EyeProj">
+                <div id="EyeImg">
+                    <img src="eyeimg.png"; alt="Eye"; width="300px"; height="300px">
+                </div>
+                <div id="Eyes">
+                    <p id="description">
+                        In this project a pair of eyes follows the mouse cursor on the screen. If the user clicks and holds down the mouse, the eyes will shut and when the user lets go of the mouse, the eyes will open.
+                    </p>
+                </div>
+                <div id = "EyeGit">
+                    <p>
+                        Check out the project in your 
+                        <a href="Eye/index.html" target="_blank">browser</a>
+                    </p>
+                    <p>
+                        Check out the repository on 
+                        <a href="https://github.com/Academia-DB/MIT_Bootcamp_Files/tree/main/Website/Eye" target="_blank">GitHub</a>
+                    </p>
+                </div>
+            </div>
+            <div class="BusProj">
+                <div id="BusImg">
+                    <img src="Real Time Bus Tracker/dark_screenshot.png"; alt="Bus"; width="300px"; height="300px">
+                </div>
+                <div id="Buses">
+                    <p id="description">
+                        This project uses mapbox map data to create a bus path so the user can see the bus stops from MIT to Harvard by pressing the button in the top left. The top right button is a light/dark mode toggle.
+                    </p>
+                </div>
+                <div id = "BusGit">
+                    <p>
+                        Check out the project in your 
+                        <a href="Real Time Bus Tracker/index.html" target="_blank">browser</a>
+                    </p>
+                    <p>
+                        Check out the repository on 
+                        <a href="https://github.com/Academia-DB/MIT_Bootcamp_Files/tree/main/Website/Real%20Time%20Bus%20Tracker" target="_blank">GitHub</a>
+                    </p>
+                </div>
+            </div>
+        </section> -->
