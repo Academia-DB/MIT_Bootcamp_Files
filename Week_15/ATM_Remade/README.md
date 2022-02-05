@@ -2,4 +2,5 @@
 Week 15 ATM
   
 <h2>Description</h2>
-I added a history check, disabled the button, reset state and input box
+Quick working atm for browser
+I added a history, disabled the submit button when there is no value, reset state and input box
