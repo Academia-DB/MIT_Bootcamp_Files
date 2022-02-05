@@ -1,8 +1,9 @@
 // Ex 2 - remove any item from navbar with less than minStock in stock
 // write out both the name and the number in stock in format apple:2
 function NavBar({ menuitems, minstock }) {
-  const updatedList = menuitems.map((item, index) => {
-    return <li key={index}>{item.name}</li>;
+  const fixList = menuitems.filter(item => item.instock >= minstock)
+  const updatedList = fixList.map((item, index) => {
+    return <li key={index}>{item.name}:{item.instock}</li>;
   });
   // note that React needs to have a single Parent
   return <ul style={{ listStyleType: "none" }}>{updatedList}</ul>;

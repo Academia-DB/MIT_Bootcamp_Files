@@ -10,17 +10,23 @@ function NavBar({ stockitems }) {
   // event apple:2
   const moveToCart = e => {
     let [name, num] = e.target.innerHTML.split(":"); // innerHTML should be format name:3
+    if(num <= 0) return;
     // use newStock = stock.map to find "name" and decrease number in stock by 1
+    let item = stock.filter((item) => item.name == name);
     // only if instock is >=  do we move item to Cart and update stock
-    let newStock = stock.map((item, index) => {
-      if (item.name == name) item.instock--;
+    let newStock = stock.map((item) => {
+      if (item.name == name) {
+        item.instock--;
+      }
       return item;
     });
-    setStock(newStock);
+    setStock(...newStock);
+    setCart(...cart, ...item);
+    console.log(`Cart: ${JSON.stringify(cart)}`);
   };
-  const updatedList = stock.map((item, index) => {
+  const updatedList = menuItems.map((item, index) => {
     return (
-      <Button onClick={moveToCart} key={index}>
+      <Button key={index} onClick={moveToCart}>
         {item.name}:{item.instock}
       </Button>
     );
@@ -28,9 +34,22 @@ function NavBar({ stockitems }) {
   // note that React needs to have a single Parent
   return (
     <>
-      <ul style={{ listStyleType: "none" }}>{updatedList}</ul>
+      <ul key="stock" style={{ listStyleType: "none" }}>{updatedList}</ul>
       <h1>Shopping Cart</h1>
+      <Cart cartitems={cart}> Cart Items</Cart>
     </>
+  );
+}
+function Cart({ cartitems }) {
+  const { Card, Button } = ReactBootstrap;
+  console.log("rendering Cart");
+  const updatedList = cartitems.map((item, index) => {
+    return <Button key={index}>{item.name}</Button>;
+  });
+  return (
+    <ul style={{ listStyleType: "none" }} key="cart">
+      {updatedList}
+    </ul>
   );
 }
 const menuItems = [

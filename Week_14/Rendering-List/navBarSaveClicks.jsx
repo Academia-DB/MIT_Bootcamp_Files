@@ -6,7 +6,7 @@ function NavBar(props) {
   const list = props.menuitems;
   const { Button } = ReactBootstrap;
   // each item should have an unique key
-  const handlßeClick = e => {
+  const handleClick = e => {
     console.log(`clicked on: ${e.target.innerHTML}`);
     setClicks([...clicks, e.target.innerHTML]);
   };
