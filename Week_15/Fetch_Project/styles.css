@@ -1,0 +1,32 @@
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container {
+    width: 600px;
+    height: 600px;
+    outline: solid 2px;
+    background: aquamarine;
+    display: flex;
+    border-radius: 20px 40px;
+    margin-top: 100px;
+}
+
+form {
+    width: 600px;
+    height: 600px;
+    text-align: center;
+}
+
+.cats {
+    width: 400px; 
+    height: 400px;
+    margin-top: 50px;
+}
+
+Button {
+    width: 300px;
+    height: 50px;
+    margin-top: 50px;
+}

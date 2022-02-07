@@ -8,8 +8,8 @@ function App() {
   console.log("Rendering App");
 
   useEffect(() => {
-    console.log("Fetching data...");
-    const fetchData = async () => {
+      console.log("Fetching data...");
+      const fetchData = async () => {
       const result = await axios(url);
       setData(result.data);
     };
