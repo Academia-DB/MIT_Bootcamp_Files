@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "title": "Pacman",
+      "location": "Github",
+      "imageUrl": "https://github.com/Academia-DB/Academia-DB.github.io/blob/main/pacman.png?raw=true",
+      "webURL": "https://academia-db.github.io/PacmanExercise/index.html"
+    },
+    {
+      "title": "Eye",
+      "location": "Github",
+      "imageUrl": "https://academia-db.github.io/eyeimg.png",
+      "webURL": "https://academia-db.github.io/Eye/index.html"
+    },
+    {
+      "title": "Bus",
+      "location": "Github",
+      "imageUrl": "https://academia-db.github.io/light_screenshot.png",
+      "webURL": "https://academia-db.github.io/Real%20Time%20Bus%20Tracker/index.html"
+    }
+  ]
+}

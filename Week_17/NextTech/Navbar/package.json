@@ -1,0 +1,22 @@
+{
+  "name": "assignments",
+  "version": "1.0.0",
+  "description": "week7 assignments unit test",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>/**/**"
+    ]
+  },
+  "keywords": [],
+  "author": "issam",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-preset-env": "^1.7.0"
+  }
+}

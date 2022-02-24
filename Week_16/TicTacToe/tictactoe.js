@@ -5,8 +5,6 @@ const Board = () => {
   const [gameState, setGameState] = React.useState([]);
   let status = `Winner is ${checkForWinner(gameState)}`;
 
-  // Part 1 step 1 code goes here
-  // Use conditional logic to set a variable to either 'Player O' or  'Player X'
   let turn;
   if(player == 1) turn = "Player X";
   else turn = "Player O";
@@ -59,7 +57,6 @@ const Square = ({ takeTurn, id }) => {
 
   return (
     <button
-      // Part 2: update the return statement below to add css classes
       onClick={() => {
         setTik(takeTurn(id));
         setFilled(true);
