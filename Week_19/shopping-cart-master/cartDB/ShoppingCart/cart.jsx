@@ -180,10 +180,10 @@ const Products = (props) => {
   let cleanCart = () => {
     console.log("*********************");
     console.log(items);
-    let newItems = items.filter(item => item.instock != 0);
-    console.log(newItems);
+    //let newItems = items.filter(item => item.instock != 0);
+    //console.log(newItems);
     setCart([]);
-    setItems(newItems);
+    //setItems(newItems);
   };
   // TODO: implement the restockProducts function
   const restockProducts = (url) => {
@@ -196,7 +196,7 @@ const Products = (props) => {
       return {name, country, cost, instock};
     });
     console.log(added);
-    setItems([...items, ...added]);
+    setItems([...added]);
   };
 
   return (
