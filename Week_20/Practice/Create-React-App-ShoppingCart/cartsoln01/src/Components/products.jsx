@@ -29,15 +29,15 @@ import {
       isError: false,
       data: initialData,
     });
-    console.log(`useDataApi called`);
+    ////console.log(`useDataApi called`);
     useEffect(() => {
-      console.log("useEffect Called");
+      ////console.log("useEffect Called");
       let didCancel = false;
       const fetchData = async () => {
         dispatch({ type: "FETCH_INIT" });
         try {
           const result = await axios(url);
-          console.log("FETCH FROM URl");
+          ////console.log("FETCH FROM URl");
           if (!didCancel) {
             dispatch({ type: "FETCH_SUCCESS", payload: result.data });
           }
@@ -80,6 +80,8 @@ import {
     }
   };
   
+  export const urlTest = "http://localhost:1337/api/products";
+
   const Products = (props) => {
     const [items, setItems] = React.useState(products);
     const [cart, setCart] = React.useState([]);
@@ -90,19 +92,19 @@ import {
     const [query, setQuery] = useState("http://localhost:1337/api/products");
     //data/isloading/isError = data, doFetch = setData
     const [{ data, isLoading, isError }, doFetch] = useDataApi(
-      "http://localhost:1337/api/products",
+      urlTest,
       {
         data: [],
       }
     );
-    console.log(`Rendering Products ${JSON.stringify(data)}`);
+    //console.log(`Rendering Products ${JSON.stringify(data)}`);
     // Fetch Data
     const addToCart = (e) => {
       let name = e.target.name;
       let item = items.filter((item) => item.name == name);
       if(item[0].instock == 0) return;
       item[0].instock -= 1;
-      console.log(`add to Cart ${JSON.stringify(item)}`);
+      //console.log(`add to Cart ${JSON.stringify(item)}`);
       setCart([...cart, ...item]);
       //doFetch(query);
     };
@@ -113,7 +115,7 @@ import {
         if(item.name == target[0].name) item.instock += 1;
         return item;
       });
-      //console.log(newItems);
+      ////console.log(newItems);
       setCart(newCart);
       setItems(newItems);
     };
@@ -138,14 +140,14 @@ import {
     const Cart = (props) => {
       //const { Card, Accordion, Button } = 'react-bootstrap';
       let data = props.location.data ? props.location.data : products;
-      console.log(`data:${JSON.stringify(data)}`);
+      //console.log(`data:${JSON.stringify(data)}`);
 
       return <Accordion defaultActiveKey="0">{list}</Accordion>;
     };
 
     let cartList = cart.map((item, index) => {
-        console.log(item);
-        console.log(index);
+        //console.log(item);
+        //console.log(index);
         return (
             <Card key={index}>
             <Card.Header>
@@ -183,30 +185,30 @@ import {
       let costs = cart.map((item) => item.cost);
       const reducer = (accum, current) => accum + current;
       let newTotal = costs.reduce(reducer, 0);
-      console.log(`total updated to ${newTotal}`);
+      //console.log(`total updated to ${newTotal}`);
       //cart.map((item, index) => deleteCartItem(index));
       return newTotal;
     };
   
     let cleanCart = () => {
-      console.log("*********************");
-      console.log(items);
+      //console.log("*********************");
+      //console.log(items);
       //let newItems = items.filter(item => item.instock != 0);
-      //console.log(newItems);
+      ////console.log(newItems);
       setCart([]);
       //setItems(newItems);
     };
     // TODO: implement the restockProducts function
     const restockProducts = (url) => {
       doFetch(url);
-      console.log("********************"+items)
+      //console.log("********************"+items)
       let added = data.data.map(item => {
-        console.log(item);
-        console.log(item.attributes);
+        //console.log(item);
+        //console.log(item.attributes);
         let {name, country, cost, instock} = item.attributes;
         return {name, country, cost, instock};
       });
-      console.log(added);
+      //console.log(added);
       setItems([...added]);
     };
   
@@ -215,7 +217,7 @@ import {
         <Row>
           <Col>
             <h1>Product List</h1>
-            <ul style={{ listStyleType: "none" }}>{list}</ul>
+            <ul aria-label="products" style={{ listStyleType: "none" }}>{list}</ul>
           </Col>
           <Col>
             <h1>Cart Contents</h1>
@@ -231,7 +233,7 @@ import {
           <form
             onSubmit={(event) => {
               restockProducts(`${query}`);
-              console.log(`Restock called on ${query}`);
+              //console.log(`Restock called on ${query}`);
               event.preventDefault();
             }}
           >

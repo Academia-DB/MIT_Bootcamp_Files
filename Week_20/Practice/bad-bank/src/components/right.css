@@ -1,0 +1,29 @@
+
+input {
+    text-align: right;
+}
+.row1 {
+    text-align: left;
+}
+.col1 {
+    display: inline-block;
+    text-align: left;
+    margin-left: 0%;
+}
+.col2 {
+    display: inline-block;
+    font-size: 1.5em;
+    text-align: right;
+    margin-left: 50%;
+}
+.col3 {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+.col4 {
+    margin-bottom: 30px
+}
+.submit {
+    display: flex;
+    font-size: 1.5em;
+}

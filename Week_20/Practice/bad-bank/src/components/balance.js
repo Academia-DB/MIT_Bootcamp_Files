@@ -1,18 +1,24 @@
-function Login(){
+import React from "react";
+import {UserContext} from "./context.js";
+import Card from "./context.js";
+
+export default function Balance(){
   const [show, setShow]         = React.useState(true);
   const [name, setName]         = React.useState('');
   const [password, setPassword] = React.useState('');
   const [success, setSuccess]   = React.useState(false);
-  const ctx = React.useContext(UserContext);  
+  const [balance, setBalance]   = React.useState(0);
+  const ctx = React.useContext(UserContext);
 
   const verifyUser = () => {
     let correct;
     let newShow;
+    let value;
     for(let elem in ctx.users) {
       if((ctx.users[elem].name == name || ctx.users[elem].email == name) && ctx.users[elem].password == password) {
         correct = true;
         newShow = true;
-        ctx.users[elem].login = true;
+        value = ctx.users[elem].balance;
         console.log("-------------");
         break;
       }
@@ -24,22 +30,21 @@ function Login(){
     console.log("**************" + correct + " " + success);
     setSuccess(correct);
     setShow(newShow);
+    setBalance(value);
   };
-
+  
   function clearForm(){
     setName('');
     setPassword('');
     setShow(true);
     setSuccess(false);
+    setBalance(0);
   }
-
-  console.log("show: "+show);
-  console.log("success: "+success);
 
   return (
     <Card
       bgcolor="primary"
-      header="Login"
+      header="Balance"
       body={
         show && !success ? ( 
           <>
@@ -66,8 +71,9 @@ function Login(){
           </>
         ) : show && success ? (
             <>
-            <h1>Login Successful</h1>
-            <h2>Welcome {name}</h2>
+            <h1>Balance</h1>
+            <h4>{balance}</h4>
+            <br/>
             <button type="submit" className="btn btn-light" onClick={clearForm}>Log Out</button>
             </>
         ) : (
@@ -78,5 +84,5 @@ function Login(){
         )
       }
     />
-  )  
+  )
 }
