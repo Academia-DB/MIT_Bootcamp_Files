@@ -12,12 +12,54 @@ export default function CreateAccount(){
   const [password, setPassword] = React.useState('');
   const ctx = React.useContext(UserContext);  
 
+  const check = () => { 
+    let uv = '';
+    for(let item in ctx.users) {
+      if(ctx.users[item].login == true) {
+        setUser(true);
+        uv = item;
+        break;
+      }
+    }
+    return uv;
+  }
+  
+  React.useEffect(() => {
+    setUserVal(check);
+  });
+
   function validate(field, label){
       if (!field) {
         setStatus('Error: ' + label);
         setTimeout(() => setStatus(''),3000);
         return false;
       }
+
+      let str = name.replace(/\s+/g, '');
+      if(str.length == 0) {
+        alert("Must have a readable name");
+        return false;
+      }
+
+      str = email;
+      if(str.match(/@/g) == null || str.match(/\./g) == null) {
+        alert("Email must be in format email@example.com");
+        return false;
+      }
+
+      str = password;
+      if(str.length < 8) {
+        alert("Password must be at least 8 characters");
+        return false;
+      }
+
+      for(let item in ctx.users) {
+        if(ctx.users[item].name == name && ctx.users[item].email == email && ctx.users[item].password == password) {
+          alert("User cannot duplicate accounts");
+          return false;
+        }
+      }
+
       return true;
   }
 
@@ -35,10 +77,11 @@ export default function CreateAccount(){
       }
     }
 
+    console.log(name + " ________ " + email + " ---------- " + password);
+
     ctx.users.push({name,email,password,balance:0,login:true});
     UserContext.Provider  = {ctx};
     alert("Successfully Created Account");
-    clearForm();
     setShow(false);
   }    
 
@@ -48,6 +91,7 @@ export default function CreateAccount(){
     setName('');
     setEmail('');
     setPassword('');
+    setShow(true);
   }
 
   //console.log(ctx.users);
@@ -97,34 +141,9 @@ export default function CreateAccount(){
               </>
             ):(
               <>
-              NAME<br/>
-              <input 
-                type="input" 
-                className="form-control" 
-                id="name" 
-                placeholder="ENTER NAME" 
-                value={name} 
-                onChange={e => setName(e.currentTarget.value)} />
+              Account Submitted<br/>
               <br/>
-              EMAIL<br/>
-              <input 
-                type="email" 
-                className="form-control" 
-                id="email" 
-                placeholder="ENTER EMAIL" 
-                value={email} 
-                onChange={e => setEmail(e.currentTarget.value)}/>
-              <br/>
-              PASSWORD<br/>
-              <input 
-                type="password" 
-                className="form-control" 
-                id="password" 
-                placeholder="ENTER PASSWORD" 
-                value={password} 
-                onChange={e => setPassword(e.currentTarget.value)}/>
-              <br/>
-              <button type="submit" className="btn btn-light" disabled={!name || !email || !password} onClick={handleCreate}>ADD ANOTHER ACCOUNT</button>
+              <button type="submit" className="btn btn-light" onClick={clearForm}>ADD ANOTHER ACCOUNT</button>
               </>
             )}
     />

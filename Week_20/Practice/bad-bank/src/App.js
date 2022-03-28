@@ -22,10 +22,10 @@ function App() {
   let data = {users:
     [
       {
-        name:'abel',email:'abel@mit.edu',password:'secret',balance:100, login:false
+        name:'abel',email:'abel@mit.edu',password:'secret01',balance:100, login:false
       },
       {
-        name:'derek',email:'derek@email.com',password:'pass',balance:100, login:false
+        name:'derek',email:'derek@email.com',password:'passpass',balance:100, login:false
       }
     ]
   };
@@ -44,19 +44,19 @@ function App() {
         <Navbar.Collapse>
           <Nav>
             <LinkContainer to="/">
-              <Nav.Link>Home</Nav.Link>
+              <Nav.Link className="hovertext" data-hover="This is the main menu">Home</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/createaccount">
-              <Nav.Link>Create Account</Nav.Link>
+              <Nav.Link className="hovertext" data-hover="Create a new account">Create Account</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/deposit">
-              <Nav.Link>Deposit</Nav.Link>
+              <Nav.Link className="hovertext" data-hover="Add money to your account">Deposit</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/withdraw">
-              <Nav.Link>Withdraw</Nav.Link>
+              <Nav.Link className="hovertext" data-hover="Remove money from account">Withdraw</Nav.Link>
             </LinkContainer>
             <LinkContainer to="/alldata">
-              <Nav.Link>All Data</Nav.Link>
+              <Nav.Link className="hovertext" data-hover="Check registered data">All Data</Nav.Link>
             </LinkContainer>
           </Nav>
         </Navbar.Collapse>        

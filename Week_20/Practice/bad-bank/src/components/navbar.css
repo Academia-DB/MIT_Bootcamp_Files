@@ -15,6 +15,20 @@ body {
 .navbar-nav .active {
     color: yellow !important;
 } 
-/* .a.current {
-    color: yellow !important;
-} */
+.navbar-dark .navbar-nav .hovertext:before {
+    content: attr(data-hover);
+    visibility: hidden;
+    position:absolute;
+    padding-left: 5px ;
+    color: White;
+    width: 120px;
+    transform: translate(-10px, 45px);
+    background-color: black;
+    border-radius: 5px;
+}
+.navbar-dark .navbar-nav .hovertext {
+    position: relative;
+}
+.navbar-dark .navbar-nav .hovertext:hover:before {
+    visibility: visible;
+}
