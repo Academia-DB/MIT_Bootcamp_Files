@@ -51,3 +51,5 @@ app.post('/add', function(req, res){
 app.listen(3000, function(){
     console.log('Running on port 3000!')
 })
+
+//`curl -H “Content-Type: application/json” -X POST -d ‘{“username”:”peterparker”,”password”:”secret”}’ http://localhost:3000/test`
