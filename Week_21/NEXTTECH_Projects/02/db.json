@@ -1,0 +1,30 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "cost": 24.2,
+      "discountCode": "APEN23",
+      "items": [
+        "books",
+        "food",
+        "clothing"
+      ]
+    },
+    {
+      "id": 2,
+      "cost": 475.2,
+      "discountCode": "QTZPE3",
+      "items": [
+        "TV"
+      ]
+    },
+    {
+      "id": 3,
+      "cost": 4899.2,
+      "discountCode": "LMSOW1",
+      "items": [
+        "car"
+      ]
+    }
+  ]
+}

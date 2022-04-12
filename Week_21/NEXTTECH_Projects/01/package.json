@@ -1,0 +1,15 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "NextTech_01",
+  "main": "simple-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node simple-server.js"
+  },
+  "author": "Derek",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
