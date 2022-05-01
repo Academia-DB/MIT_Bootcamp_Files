@@ -70,22 +70,23 @@ type Dish{
   name: String
   price: Int
 }
+
 input restaurantInput{
   name: String
   description: String
+  dishes: [newDish]
 }
 type DeleteResponse{
   ok: Boolean!
 }
 type Mutation{
   setrestaurant(input: restaurantInput): restaurant
-
   deleterestaurant(id: Int!): DeleteResponse
   editrestaurant(id: Int!, name: String!): restaurant
 }
+
 `);
 // The root provides a resolver function for each API endpoint
-
 
 var root = {
   restaurant : (arg)=>restaurants[arg.id],
@@ -109,7 +110,7 @@ var root = {
     ...restaurants[id],...restaurant
     }
     return restaurants[id]
-  }
+  },
 }
 var app = express();
 app.use('/graphql', graphqlHTTP({
