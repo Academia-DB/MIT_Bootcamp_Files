@@ -72,21 +72,29 @@ type restaurant {
   id: Int
   name: String
   description: String
-  dishes:[Dish]
+  dishes:[Dish!]
 }
 type Dish{
-  name: String
-  price: Int
+  name: String!
+  price: Int!
 }
 input restaurantInput{
   name: String
   description: String
+}
+input newDish{
+  name: String
+  price: Int
+}
+type addedDish{
+  dish:Dish!
 }
 type DeleteResponse{
   ok: Boolean!
 }
 type Mutation{
   setrestaurant(input: restaurantInput): restaurant
+  updatedishes(id: Int!, input: newDish) : [addedDish]
   deleterestaurant(id: Int!): DeleteResponse
   editrestaurant(id: Int!, name: String!): restaurant
 }
@@ -97,7 +105,12 @@ var root = {
   restaurant : (arg)=>restaurants[arg.id],
   restaurants : ()=> restaurants,
   setrestaurant : ({input}) => {
-    restaurants.push({name:input.name,email:input.email,age:input.age})
+    restaurants.push({name:input.name,description:input.description})
+    return input
+  },
+  updatedish : ({id, input}) => {
+    let dish = restaurants[id].dishes
+    dish.push([input.name,input.price])
     return input
   },
   deleterestaurant : ({id})=>{
