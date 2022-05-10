@@ -111,6 +111,7 @@ var root = {
   updatedish : ({id, input}) => {
     let dish = restaurants[id].dishes
     dish.push([input.name,input.price])
+    console.log(JSON.stringify(dish))
     return input
   },
   deleterestaurant : ({id})=>{
