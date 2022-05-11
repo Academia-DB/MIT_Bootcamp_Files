@@ -38,7 +38,7 @@ app.get('/pokemon', (req,res) => {
         {
             id: 1,
             name: "bulbasaur",
-            level: 5
+            level: 5,
         }
     ]);
 });
@@ -49,19 +49,31 @@ app.get('/pokemon', (req,res) => {
 *   post:
 *     description: caught one
 *     parameters:
+*     - id: id
+*       description: Dex Entry
+*       in: body
+*       required: true
+*       type: integer
 *     - name: name
 *       description: Pocket Monster
 *       in: body
 *       required: true
 *       type: string
+*     - level: level
+*       description: Current Level
+*       in: body
+*       required: true
+*       type: integer
 *     responses:
 *       200:
 *         description: Success
 *
 */
 app.post('/caught', (req,res) => {
+    const id = req.body.id;
     const name = req.body.name;
-    res.send({name});
+    const level = req.body.level;
+    res.send({id, name, level});
 });
 
 app.listen(3000, () => {
