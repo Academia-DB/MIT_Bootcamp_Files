@@ -5,9 +5,7 @@
 <h1>Installation:</h1> 
 <h2>Clone the Three Tiers folder, run docker, run mongo, npm index.js or index.html</h2>
 <h1>Screenshot:</h1> 
-<h2>
-  ![Screenshot](https://github.com/Academia-DB/MIT_Bootcamp_Files/blob/main/Week_27/BadBankThreeTiers/public/bank.png)
-</h2>
+![Screenshot](https://github.com/Academia-DB/MIT_Bootcamp_Files/blob/main/Week_27/BadBankThreeTiers/public/bank.png)
 <h1>Technology:</h1> 
 <h2>VS Code, Docker Desktop, MongoDB Compass, Studio 3T</h2>
 <h1>Features:</h1> 
