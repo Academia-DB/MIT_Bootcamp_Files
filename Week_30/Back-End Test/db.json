@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "name": "Ms. D'angelo Lang",
+      "dob": "1946-9-18",
+      "email": "Dangelo35@hotmail.com",
+      "username": "Dangelo.Lang",
+      "password": "iU8naqQTCkS5iB8",
+      "phone": "(221) 989-6953 x62006",
+      "streetaddress": "95994 Minnie Lodge",
+      "citystatezip": "Ziemebury, NH 06063-9960",
+      "latitude": "81.5664",
+      "longitude": "-52.0437",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/bargaorobalo/128.jpg"
+    },
+    {
+      "name": "Imelda Marks",
+      "dob": "1970-2-14",
+      "email": "Imelda52@yahoo.com",
+      "username": "Imelda.Marks",
+      "password": "NaMWbkMjCLj5EH3",
+      "phone": "941-805-3501",
+      "streetaddress": "546 Devin Garden",
+      "citystatezip": "Daughertyshire, ID 59082",
+      "latitude": "-82.8624",
+      "longitude": "61.3221",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/arishi_/128.jpg"
+    },
+    {
+      "name": "Ms. Paxton Boyle",
+      "dob": "1951-7-23",
+      "email": "Paxton_Boyle42@yahoo.com",
+      "username": "Paxton.Boyle8",
+      "password": "mAQhrNrz7mNexKw",
+      "phone": "559-812-7705 x76627",
+      "streetaddress": "57097 Emerson Crescent",
+      "citystatezip": "East Leannechester, IL 05946-2063",
+      "latitude": "-42.1345",
+      "longitude": "66.9731",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/otozk/128.jpg"
+    },
+    {
+      "name": "Vivianne Heller",
+      "dob": "1970-5-19",
+      "email": "Vivianne.Heller26@gmail.com",
+      "username": "Vivianne.Heller12",
+      "password": "lVBZG_wI_bFSBfj",
+      "phone": "(414) 988-0541",
+      "streetaddress": "3315 Pink Ranch",
+      "citystatezip": "South Davonteville, OK 21956",
+      "latitude": "-86.7679",
+      "longitude": "95.5614",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/trubeatto/128.jpg"
+    }
+  ]
+}

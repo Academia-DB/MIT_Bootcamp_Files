@@ -1,0 +1,3 @@
+{
+    "app": "npx ts-node bin/awsec3_express_docker.ts"
+}

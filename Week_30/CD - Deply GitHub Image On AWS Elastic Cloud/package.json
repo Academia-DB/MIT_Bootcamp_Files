@@ -1,0 +1,23 @@
+{
+    "name": "awsec3_express_docker",
+    "version": "0.1.0",
+    "bin": {
+        "awsec3_docker_express": "bin/awsec3_express_docker.js"
+    },
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc -w",
+        "cdk": "cdk"
+    },
+    "devDependencies": {
+        "@types/node": "^12.6.8",
+        "aws-cdk": "^1.2.0",
+        "typescript": "^3.5.3"
+    },
+    "dependencies": {
+        "@aws-cdk/aws-ecs": "^1.2.0",
+        "@aws-cdk/aws-elasticloadbalancingv2": "^1.2.0",
+        "@aws-cdk/core": "^1.2.0",
+        "source-map-support": "^0.5.12"
+    }
+}
