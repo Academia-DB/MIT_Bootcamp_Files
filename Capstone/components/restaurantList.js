@@ -42,8 +42,9 @@ let searchQuery = data.restaurants.filter((res) =>{
     return res.name.toLowerCase().includes(props.search)
   })
 
-let restId = searchQuery[0].id
- 
+let restId;
+if(searchQuery.length >= 1) restId = searchQuery[0].id
+
 // definet renderer for Dishes
   const renderDishes = (restaurantID) => {
     return (<Dishes restId={restaurantID}> </Dishes>)
@@ -63,9 +64,7 @@ if(searchQuery.length > 0){
           <CardText>{res.description}</CardText>
         </CardBody>
         <div className="card-footer">
-        
-        <Button color="info" onClick={()=> setRestaurantID(res.id)}>{res.name}</Button>
-         
+          <Button color="info" style={{width: 280}} onClick={()=> setRestaurantID(res.id)}>{res.name}</Button>
         </div>
       </Card>
     </Col>

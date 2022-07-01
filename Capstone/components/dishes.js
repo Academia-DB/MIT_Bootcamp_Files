@@ -54,7 +54,7 @@ const GET_RESTAURANT_DISHES = gql`
               <Card style={{ margin: "0 10px" }}>
                 <CardImg
                   top={true}
-                  style={{ height: 150, width:150 }}
+                  style={{ height: 150, width:348 }}
                   src={`http://localhost:1337${res.image.url}`}
                 />
                 <CardBody>
@@ -66,6 +66,7 @@ const GET_RESTAURANT_DISHES = gql`
                     outline
                     color="primary"
                     onClick = {()=> addItem(res)}
+                    style={{width: 310}}
                   >
                     + Add To Cart
                   </Button>

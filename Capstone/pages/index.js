@@ -13,7 +13,6 @@ function Home() {
     const cache = new InMemoryCache()
     const client = new ApolloClient({link,cache});
  
-  
     return (
         <ApolloProvider client={client}>
           <div className="search">

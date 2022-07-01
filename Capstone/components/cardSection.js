@@ -2,7 +2,10 @@ import React from "react";
 
 import { CardElement } from "@stripe/react-stripe-js";
 
+import Link from "next/link";
+
 function CardSection(props) {
+  console.log(props)
   return (
     <div>
       <div>
@@ -20,7 +23,9 @@ function CardSection(props) {
               </div>
               <br />
               <div className="order-button-wrapper">
-                <button onClick={props.submitOrder}>Confirm order</button>
+                <Link href="javascript:setTimeout(() => {window.location.href = '/'}, 1000);">
+                  <button onClick={props.submitOrder}>Confirm order</button>
+                </Link>
               </div>
               {props.stripeError ? (
                 <div>{props.stripeError.toString()}</div>

@@ -26,7 +26,7 @@ const Register = () => {
         <Col sm="12" md={{ size: 5, offset: 3 }}>
           <div className="paper">
             <div className="header">
-              <img src="http://localhost:1337/uploads/5a60a9d26a764e7cba1099d8b157b5e9.png" />
+              <img src="http://localhost:1337/uploads/52c956020f564149998f195e74b12bd1.png" width="300px"/>
             </div>
             <section className="wrapper">
               {Object.entries(error).length !== 0 &&
@@ -100,6 +100,7 @@ const Register = () => {
                             appContext.setUser(res.data.user);
                             setLoading(false);
                             console.log(`registered user: ${JSON.stringify(res.data)}`)
+                            alert(`Welcome ${data.username}`)
                           })
                           .catch((error) => {
                             console.log(`error in register: ${error}`)

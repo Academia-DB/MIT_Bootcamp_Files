@@ -1,21 +1,28 @@
 import React, { useContext } from "react";
 import { useRouter } from "next/router";
-import { Button, Card, CardBody, CardTitle, Badge } from "reactstrap";
+import { Button, Card, Col, CardBody, CardTitle, Badge } from "reactstrap";
 import AppContext from "./context"
 import Link from "next/link"
 // we can pass cart data in via props method 
 // the alternative is using useContext as below
+
 function Cart() {
   let isAuthenticated = true;
   let {cart,addItem,removeItem} = useContext(AppContext);
+  
   //const [cartA, setCartA] = useState({cart})
   //cart = value.cart;
   //console.log('props:'+ JSON.stringify(value));
   console.log(`in CART: ${JSON.stringify(cart)}`)
   
-  //   problem is that cart may not be set
+  //   problem is that cart may not be set 
   const router = useRouter();
   console.log(`Router Path: ${JSON.stringify(router)}`)
+  const setUrl = () => {
+    if(router.asPath == "/checkout") return false;
+    else return true;
+  }
+
   const renderItems = ()=>{
   let {items} = cart;
    console.log(`items: ${JSON.stringify(items)}`)
@@ -23,46 +30,42 @@ function Cart() {
       var itemList = cart.items.map((item) => {
           if (item.quantity > 0) {
             return (
-              <div
-                className="items-one"
-                style={{ marginBottom: 15 }}
-                key={item.id}
-              >
-                <div>
-                  <span id="item-price">&nbsp; ${item.price}</span>
-                  <span id="item-name">&nbsp; {item.name}</span>
+                <div className="items-one" style={{ marginBottom: 15 }} key={item.id}>
+                  <div>
+                    <span id="item-price">&nbsp; ${item.price}</span>
+                    <span id="item-name">&nbsp; {item.name}</span>
+                  </div>
+                  <div>
+                    <Button
+                      style={{
+                        height: 25,
+                        padding: 0,
+                        width: 15,
+                        marginRight: 5,
+                        marginLeft: 10,
+                      }}
+                      onClick={() => addItem(item)}
+                      color="link"
+                    >
+                      +
+                    </Button>
+                    <Button
+                      style={{
+                        height: 25,
+                        padding: 0,
+                        width: 15,
+                        marginRight: 10,
+                      }}
+                      onClick={() => removeItem(item)}
+                      color="link"
+                    >
+                      -
+                    </Button>
+                    <span style={{ marginLeft: 5 }} id="item-quantity">
+                      {item.quantity}x
+                    </span>
+                  </div>
                 </div>
-                <div>
-                  <Button
-                    style={{
-                      height: 25,
-                      padding: 0,
-                      width: 15,
-                      marginRight: 5,
-                      marginLeft: 10,
-                    }}
-                    onClick={() => addItem(item)}
-                    color="link"
-                  >
-                    +
-                  </Button>
-                  <Button
-                    style={{
-                      height: 25,
-                      padding: 0,
-                      width: 15,
-                      marginRight: 10,
-                    }}
-                    onClick={() => removeItem(item)}
-                    color="link"
-                  >
-                    -
-                  </Button>
-                  <span style={{ marginLeft: 5 }} id="item-quantity">
-                    {item.quantity}x
-                  </span>
-                </div>
-              </div>
             );
           }
         })
@@ -72,20 +75,34 @@ function Cart() {
         return (<div></div>)
     }
   }
-const checkoutItems = ()=>{
-  return (
-    <div>
-      <Badge style={{ width: 200, padding: 10 }} color="light">
-        <h5 style={{ fontWeight: 100, color: "gray" }}>Total:</h5>
-        <h3>${cart.total}</h3>
-      </Badge>
+  const checkoutItems = ()=>{
+    let checkUrl = setUrl();
+    if(checkUrl) {
+      return (
+        <div>
+          <Badge style={{ width: 200, padding: 10 }} color="light">
+            <h5 style={{ fontWeight: 100, color: "gray" }}>Total:</h5>
+            <h3>${cart.total}</h3>
+          </Badge>
           <Link href="/checkout/">
-            <Button style={{ width: "60%" }} color="primary">
-              <a>Order</a>
-            </Button>
+          <Button style={{marginLeft: "10%", width: "60%" }} color="primary">
+            <a>Order</a>
+          </Button>
           </Link>
-    </div>
-  )}
+        </div>
+      )
+    }
+    else{
+      return (
+        <div>
+          <Badge style={{ width: 200, padding: 10 }} color="light">
+            <h5 style={{ fontWeight: 100, color: "gray" }}>Total:</h5>
+            <h3>${cart.total}</h3>
+          </Badge>
+        </div>
+      )
+    }
+  }
 
 // return Cart
   return (
