@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { Button, Card, Col, CardBody, CardTitle, Badge } from "reactstrap";
 import AppContext from "./context"
 import Link from "next/link"
+import { route } from "next/dist/next-server/server/router";
 // we can pass cart data in via props method 
 // the alternative is using useContext as below
 
@@ -20,8 +21,10 @@ function Cart() {
   console.log(`Router Path: ${JSON.stringify(router)}`)
   const setUrl = () => {
     if(router.asPath == "/checkout") return false;
+    else if(router.asPath == "/" && cart.items.length == 0) return false;
     else return true;
   }
+  let checkUrl = setUrl();
 
   const renderItems = ()=>{
   let {items} = cart;
@@ -76,7 +79,7 @@ function Cart() {
     }
   }
   const checkoutItems = ()=>{
-    let checkUrl = setUrl();
+    checkUrl = setUrl();
     if(checkUrl) {
       return (
         <div>
